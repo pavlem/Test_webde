@@ -15,7 +15,13 @@ class StartVC: UIViewController {
     
     // MARK: - Actions
     @IBAction func fetchWeather(_ sender: UIButton) {
-        guard cityNameTxtFld.text!.count > 0 else { return }
+        guard cityNameTxtFld.text!.count > 2 else {
+            
+            AlertHelper.showAlert(txt: "City Name must have more than 3 characters") {
+                print("sssss")
+            }
+            return
+        }
         
         let wListTVC = UIStoryboard.weatherListTVC
         wListTVC.cityName = cityNameTxtFld.text
