@@ -13,9 +13,48 @@ class WeatherListTVC: UITableViewController {
     // MARK: - API
     var cityName: String?
     
+    // MARK: - Properties
+    private var dataTask: URLSessionDataTask?
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setSegmentedControll()
+//        handleNoCityFound()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        dataTask?.cancel()
+    }
+    
+    // MARK: - Helper
+    private func setSegmentedControll() {
+        let items = ["API", "Local JSON"]
+        let segmentedController = UISegmentedControl(items: items)
+        segmentedController.selectedSegmentIndex = 0
+        segmentedController.addTarget(self, action: #selector(selectSource(_:)), for: .valueChanged)
+        navigationItem.titleView = segmentedController
+    }
+    
+    private func handleNoCityFound() {
+        AlertHelper.showAlert(txt: "No city Found, please try again") {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    // MARK: - Actions
+    @objc func selectSource(_ segmentedControl: UISegmentedControl) {
+        switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            print("API")
+        case 1:
+            print("JSON....")
+        default:
+            print("default....")
+        }
     }
 }
 

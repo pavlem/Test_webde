@@ -75,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtr-kV-Ddc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624.63768115942037" y="126.5625"/>
+            <point key="canvasLocation" x="2444.9275362318845" y="126.5625"/>
         </scene>
         <!--Weather DetailVC-->
         <scene sceneID="rtm-tm-XFX">
@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5G-3n-BM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359" y="127"/>
+            <point key="canvasLocation" x="3176.811594202899" y="126.5625"/>
         </scene>
     </scenes>
 </document>
