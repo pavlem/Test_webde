@@ -16,12 +16,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the city name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-Pv-jBz">
-                                <rect key="frame" x="131.5" y="60" width="151" height="34"/>
+                                <rect key="frame" x="131.5" y="104" width="151" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYB-8O-bL8">
-                                <rect key="frame" x="140.5" y="102" width="133" height="30"/>
+                                <rect key="frame" x="140.5" y="146" width="133" height="30"/>
                                 <state key="normal" title="Fetch weather data"/>
                                 <connections>
                                     <action selector="fetchWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJB-GD-1wq"/>
@@ -39,6 +39,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cityNameTxtFld" destination="r4f-Pv-jBz" id="8zx-6x-n7z"/>
                     </connections>
@@ -46,6 +47,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-112" y="127"/>
+        </scene>
+        <!--Weather ListTVC-->
+        <scene sceneID="QM2-x0-5wi">
+            <objects>
+                <tableViewController storyboardIdentifier="WeatherListTVC_ID" id="i3u-qp-nrf" customClass="WeatherListTVC" customModule="TestWebDe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="12k-rs-chN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherListCell_ID" rowHeight="66" id="4C4-ib-jAw">
+                                <rect key="frame" x="0.0" y="28" width="414" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4C4-ib-jAw" id="peY-Pq-HHZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="i3u-qp-nrf" id="7cM-En-I2f"/>
+                            <outlet property="delegate" destination="i3u-qp-nrf" id="w5Z-aq-RpW"/>
+                        </connections>
+                    </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rtr-kV-Ddc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624.63768115942037" y="126.5625"/>
+        </scene>
+        <!--Weather DetailVC-->
+        <scene sceneID="rtm-tm-XFX">
+            <objects>
+                <viewController storyboardIdentifier="WeatherDetailVC_ID" id="apK-5s-jBf" customClass="WeatherDetailVC" customModule="TestWebDe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s7d-ft-k83">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="vPi-QF-6tv"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i5G-3n-BM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359" y="127"/>
         </scene>
     </scenes>
 </document>

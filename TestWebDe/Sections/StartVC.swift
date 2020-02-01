@@ -9,12 +9,16 @@
 import UIKit
 
 class StartVC: UIViewController {
+    
+    // MARK: - Properties
     @IBOutlet weak var cityNameTxtFld: UITextField!
     
+    // MARK: - Actions
     @IBAction func fetchWeather(_ sender: UIButton) {
-        guard cityNameTxtFld.text!.count > 0 else {
-            return
-        }
-        print("fetching........")
+        guard cityNameTxtFld.text!.count > 0 else { return }
+        
+        let wListTVC = UIStoryboard.weatherListTVC
+        wListTVC.cityName = cityNameTxtFld.text
+        navigationController?.pushViewController(wListTVC, animated: true)
     }
 }

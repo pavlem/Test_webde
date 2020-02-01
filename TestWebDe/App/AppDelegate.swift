@@ -21,11 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Helper
-    private func setRootVC() {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "StartVC_ID")
-        
+    private func setRootVC() {        
         window = UIWindow()
-        window?.rootViewController = UINavigationController(rootViewController: vc)
+        window?.rootViewController = UINavigationController(rootViewController: UIStoryboard.startVC)
         window?.makeKeyAndVisible()
     }
 }

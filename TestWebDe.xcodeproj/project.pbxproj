@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2B98080723E597190089E05C /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080623E597190089E05C /* StartVC.swift */; };
+		2B98080923E59FB30089E05C /* WeatherListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080823E59FB30089E05C /* WeatherListTVC.swift */; };
+		2B98080B23E59FC40089E05C /* WeatherListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080A23E59FC40089E05C /* WeatherListCell.swift */; };
+		2B98080D23E59FE30089E05C /* WeatherDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080C23E59FE30089E05C /* WeatherDetailVC.swift */; };
+		2B98080F23E5A0190089E05C /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080E23E5A0190089E05C /* UIStoryboard+Extension.swift */; };
 		2BA5444623E58F940094C1DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5444523E58F940094C1DB /* AppDelegate.swift */; };
 		2BA5444D23E58F940094C1DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA5444B23E58F940094C1DB /* Main.storyboard */; };
 		2BA5444F23E58F950094C1DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA5444E23E58F950094C1DB /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 
 /* Begin PBXFileReference section */
 		2B98080623E597190089E05C /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
+		2B98080823E59FB30089E05C /* WeatherListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTVC.swift; sourceTree = "<group>"; };
+		2B98080A23E59FC40089E05C /* WeatherListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListCell.swift; sourceTree = "<group>"; };
+		2B98080C23E59FE30089E05C /* WeatherDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailVC.swift; sourceTree = "<group>"; };
+		2B98080E23E5A0190089E05C /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		2BA5444223E58F940094C1DB /* TestWebDe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWebDe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA5444523E58F940094C1DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA5444C23E58F940094C1DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,8 +86,19 @@
 			isa = PBXGroup;
 			children = (
 				2B98080623E597190089E05C /* StartVC.swift */,
+				2B98080823E59FB30089E05C /* WeatherListTVC.swift */,
+				2B98080A23E59FC40089E05C /* WeatherListCell.swift */,
+				2B98080C23E59FE30089E05C /* WeatherDetailVC.swift */,
 			);
 			path = Sections;
+			sourceTree = "<group>";
+		};
+		2B98081023E5A01E0089E05C /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				2B98080E23E5A0190089E05C /* UIStoryboard+Extension.swift */,
+			);
+			path = Libs;
 			sourceTree = "<group>";
 		};
 		2BA5443923E58F940094C1DB = {
@@ -105,6 +124,7 @@
 		2BA5444423E58F940094C1DB /* TestWebDe */ = {
 			isa = PBXGroup;
 			children = (
+				2B98081023E5A01E0089E05C /* Libs */,
 				2BA5447523E5900B0094C1DB /* App */,
 				2B98080523E596FB0089E05C /* Sections */,
 				2BA5447623E590180094C1DB /* Resources */,
@@ -280,8 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B98080B23E59FC40089E05C /* WeatherListCell.swift in Sources */,
+				2B98080D23E59FE30089E05C /* WeatherDetailVC.swift in Sources */,
+				2B98080F23E5A0190089E05C /* UIStoryboard+Extension.swift in Sources */,
 				2BA5444623E58F940094C1DB /* AppDelegate.swift in Sources */,
 				2B98080723E597190089E05C /* StartVC.swift in Sources */,
+				2B98080923E59FB30089E05C /* WeatherListTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
