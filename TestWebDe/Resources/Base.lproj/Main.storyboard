@@ -7,32 +7,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--StartVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestWebDe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartVC" customModule="TestWebDe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HELLO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ey9-vc-X4s">
-                                <rect key="frame" x="180.5" y="442.5" width="53" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the city name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-Pv-jBz">
+                                <rect key="frame" x="131.5" y="98" width="151" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYB-8O-bL8">
+                                <rect key="frame" x="140.5" y="140" width="133" height="30"/>
+                                <state key="normal" title="Fetch weather data"/>
+                                <connections>
+                                    <action selector="fetchWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJB-GD-1wq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ey9-vc-X4s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hoj-c2-4M4"/>
-                            <constraint firstItem="ey9-vc-X4s" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="uwK-nW-bwA"/>
+                            <constraint firstItem="r4f-Pv-jBz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="2OP-zJ-JF4"/>
+                            <constraint firstItem="KYB-8O-bL8" firstAttribute="centerX" secondItem="r4f-Pv-jBz" secondAttribute="centerX" id="CGf-KC-3ok"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r4f-Pv-jBz" secondAttribute="trailing" constant="16" id="HWt-3M-uuO"/>
+                            <constraint firstItem="r4f-Pv-jBz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OOd-Zf-rXu"/>
+                            <constraint firstItem="KYB-8O-bL8" firstAttribute="top" secondItem="r4f-Pv-jBz" secondAttribute="bottom" constant="8" id="Qih-Wm-Sv1"/>
+                            <constraint firstItem="r4f-Pv-jBz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="UL8-cp-r0P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cityNameTxtFld" destination="r4f-Pv-jBz" id="8zx-6x-n7z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="138"/>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
