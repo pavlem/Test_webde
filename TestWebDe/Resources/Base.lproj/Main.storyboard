@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -10,18 +10,18 @@
         <!--StartVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartVC" customModule="TestWebDe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartVC_ID" id="BYZ-38-t0r" customClass="StartVC" customModule="TestWebDe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the city name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-Pv-jBz">
-                                <rect key="frame" x="131.5" y="98" width="151" height="34"/>
+                                <rect key="frame" x="131.5" y="60" width="151" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYB-8O-bL8">
-                                <rect key="frame" x="140.5" y="140" width="133" height="30"/>
+                                <rect key="frame" x="140.5" y="102" width="133" height="30"/>
                                 <state key="normal" title="Fetch weather data"/>
                                 <connections>
                                     <action selector="fetchWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJB-GD-1wq"/>
@@ -30,7 +30,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="r4f-Pv-jBz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="2OP-zJ-JF4"/>
+                            <constraint firstItem="r4f-Pv-jBz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="2OP-zJ-JF4"/>
                             <constraint firstItem="KYB-8O-bL8" firstAttribute="centerX" secondItem="r4f-Pv-jBz" secondAttribute="centerX" id="CGf-KC-3ok"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r4f-Pv-jBz" secondAttribute="trailing" constant="16" id="HWt-3M-uuO"/>
                             <constraint firstItem="r4f-Pv-jBz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OOd-Zf-rXu"/>
@@ -45,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+            <point key="canvasLocation" x="-112" y="127"/>
         </scene>
     </scenes>
 </document>
