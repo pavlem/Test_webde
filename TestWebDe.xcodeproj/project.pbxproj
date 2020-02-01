@@ -99,13 +99,9 @@
 		2BA5444423E58F940094C1DB /* TestWebDe */ = {
 			isa = PBXGroup;
 			children = (
-				2BA5444523E58F940094C1DB /* AppDelegate.swift */,
-				2BA5444723E58F940094C1DB /* SceneDelegate.swift */,
+				2BA5447623E590180094C1DB /* Resources */,
+				2BA5447523E5900B0094C1DB /* App */,
 				2BA5444923E58F940094C1DB /* ViewController.swift */,
-				2BA5444B23E58F940094C1DB /* Main.storyboard */,
-				2BA5444E23E58F950094C1DB /* Assets.xcassets */,
-				2BA5445023E58F950094C1DB /* LaunchScreen.storyboard */,
-				2BA5445323E58F950094C1DB /* Info.plist */,
 			);
 			path = TestWebDe;
 			sourceTree = "<group>";
@@ -126,6 +122,26 @@
 				2BA5446923E58F960094C1DB /* Info.plist */,
 			);
 			path = TestWebDeUITests;
+			sourceTree = "<group>";
+		};
+		2BA5447523E5900B0094C1DB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2BA5444723E58F940094C1DB /* SceneDelegate.swift */,
+				2BA5445323E58F950094C1DB /* Info.plist */,
+				2BA5444523E58F940094C1DB /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2BA5447623E590180094C1DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2BA5444E23E58F950094C1DB /* Assets.xcassets */,
+				2BA5444B23E58F940094C1DB /* Main.storyboard */,
+				2BA5445023E58F950094C1DB /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,7 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestWebDe/Info.plist;
+				INFOPLIST_FILE = TestWebDe/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +468,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestWebDe/Info.plist;
+				INFOPLIST_FILE = TestWebDe/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
