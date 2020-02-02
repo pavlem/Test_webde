@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B20B62C23E5A487009B65E1 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B20B62B23E5A487009B65E1 /* AlertHelper.swift */; };
+		2B20B62E23E5ABEE009B65E1 /* BlockScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B20B62D23E5ABEE009B65E1 /* BlockScreen.swift */; };
 		2B98080723E597190089E05C /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080623E597190089E05C /* StartVC.swift */; };
 		2B98080923E59FB30089E05C /* WeatherListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080823E59FB30089E05C /* WeatherListTVC.swift */; };
 		2B98080B23E59FC40089E05C /* WeatherListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080A23E59FC40089E05C /* WeatherListCell.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		2B20B62B23E5A487009B65E1 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		2B20B62D23E5ABEE009B65E1 /* BlockScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockScreen.swift; sourceTree = "<group>"; };
 		2B98080623E597190089E05C /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		2B98080823E59FB30089E05C /* WeatherListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTVC.swift; sourceTree = "<group>"; };
 		2B98080A23E59FC40089E05C /* WeatherListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListCell.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				2B98080E23E5A0190089E05C /* UIStoryboard+Extension.swift */,
 				2B20B62B23E5A487009B65E1 /* AlertHelper.swift */,
+				2B20B62D23E5ABEE009B65E1 /* BlockScreen.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				2B20B62C23E5A487009B65E1 /* AlertHelper.swift in Sources */,
 				2B98080723E597190089E05C /* StartVC.swift in Sources */,
 				2B98080923E59FB30089E05C /* WeatherListTVC.swift in Sources */,
+				2B20B62E23E5ABEE009B65E1 /* BlockScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

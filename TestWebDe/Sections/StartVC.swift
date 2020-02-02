@@ -11,15 +11,15 @@ import UIKit
 class StartVC: UIViewController {
     
     // MARK: - Properties
+    // MARK: Outlets
     @IBOutlet weak var cityNameTxtFld: UITextField!
+    // MARK: Constants
+    private let minCityCharLength = 3
     
     // MARK: - Actions
     @IBAction func fetchWeather(_ sender: UIButton) {
-        guard cityNameTxtFld.text!.count > 2 else {
-            
-            AlertHelper.showAlert(txt: "City Name must have more than 3 characters") {
-                print("sssss")
-            }
+        guard cityNameTxtFld.text!.count > minCityCharLength else {
+            AlertHelper.showAlert(txt: "City Name must have more than 3 characters") {}
             return
         }
         
