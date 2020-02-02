@@ -20,6 +20,12 @@
 		2BA5445223E58F950094C1DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA5445023E58F950094C1DB /* LaunchScreen.storyboard */; };
 		2BA5445D23E58F950094C1DB /* TestWebDeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5445C23E58F950094C1DB /* TestWebDeTests.swift */; };
 		2BA5446823E58F960094C1DB /* TestWebDeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5446723E58F960094C1DB /* TestWebDeUITests.swift */; };
+		2BB5AD0E23E6E17A0091CFBE /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD0D23E6E17A0091CFBE /* Encodable+Extension.swift */; };
+		2BB5AD1023E6E1880091CFBE /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD0F23E6E1880091CFBE /* ServiceError.swift */; };
+		2BB5AD1523E6E1910091CFBE /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1123E6E1900091CFBE /* WebClient.swift */; };
+		2BB5AD1623E6E1910091CFBE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1223E6E1900091CFBE /* Reachability.swift */; };
+		2BB5AD1723E6E1910091CFBE /* ReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1323E6E1900091CFBE /* ReachabilityHelper.swift */; };
+		2BB5AD1823E6E1910091CFBE /* ServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1423E6E1900091CFBE /* ServiceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,12 @@
 		2BA5446323E58F960094C1DB /* TestWebDeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestWebDeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA5446723E58F960094C1DB /* TestWebDeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWebDeUITests.swift; sourceTree = "<group>"; };
 		2BA5446923E58F960094C1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BB5AD0D23E6E17A0091CFBE /* Encodable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		2BB5AD0F23E6E1880091CFBE /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		2BB5AD1123E6E1900091CFBE /* WebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebClient.swift; sourceTree = "<group>"; };
+		2BB5AD1223E6E1900091CFBE /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		2BB5AD1323E6E1900091CFBE /* ReachabilityHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityHelper.swift; sourceTree = "<group>"; };
+		2BB5AD1423E6E1900091CFBE /* ServiceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +112,7 @@
 		2B98081023E5A01E0089E05C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				2BB5AD0C23E6E1470091CFBE /* Net */,
 				2B98080E23E5A0190089E05C /* UIStoryboard+Extension.swift */,
 				2B20B62B23E5A487009B65E1 /* AlertHelper.swift */,
 				2B20B62D23E5ABEE009B65E1 /* BlockScreen.swift */,
@@ -173,6 +186,43 @@
 				2BA5445023E58F950094C1DB /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2BB5AD0C23E6E1470091CFBE /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				2BB5AD1923E6E1980091CFBE /* Services */,
+				2BB5AD1B23E6E1A70091CFBE /* Request Objects */,
+				2BB5AD1A23E6E1A10091CFBE /* Response Objects */,
+				2BB5AD1223E6E1900091CFBE /* Reachability.swift */,
+				2BB5AD1323E6E1900091CFBE /* ReachabilityHelper.swift */,
+				2BB5AD1123E6E1900091CFBE /* WebClient.swift */,
+				2BB5AD1423E6E1900091CFBE /* ServiceHelper.swift */,
+				2BB5AD0F23E6E1880091CFBE /* ServiceError.swift */,
+				2BB5AD0D23E6E17A0091CFBE /* Encodable+Extension.swift */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
+		2BB5AD1923E6E1980091CFBE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2BB5AD1A23E6E1A10091CFBE /* Response Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Response Objects";
+			sourceTree = "<group>";
+		};
+		2BB5AD1B23E6E1A70091CFBE /* Request Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Request Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,11 +356,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB5AD1023E6E1880091CFBE /* ServiceError.swift in Sources */,
+				2BB5AD1823E6E1910091CFBE /* ServiceHelper.swift in Sources */,
 				2B98080B23E59FC40089E05C /* WeatherListCell.swift in Sources */,
+				2BB5AD1623E6E1910091CFBE /* Reachability.swift in Sources */,
 				2B98080D23E59FE30089E05C /* WeatherDetailVC.swift in Sources */,
 				2B98080F23E5A0190089E05C /* UIStoryboard+Extension.swift in Sources */,
 				2BA5444623E58F940094C1DB /* AppDelegate.swift in Sources */,
 				2B20B62C23E5A487009B65E1 /* AlertHelper.swift in Sources */,
+				2BB5AD0E23E6E17A0091CFBE /* Encodable+Extension.swift in Sources */,
+				2BB5AD1723E6E1910091CFBE /* ReachabilityHelper.swift in Sources */,
+				2BB5AD1523E6E1910091CFBE /* WebClient.swift in Sources */,
 				2B98080723E597190089E05C /* StartVC.swift in Sources */,
 				2B98080923E59FB30089E05C /* WeatherListTVC.swift in Sources */,
 				2B20B62E23E5ABEE009B65E1 /* BlockScreen.swift in Sources */,

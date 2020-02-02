@@ -23,16 +23,16 @@ class WeatherListTVC: UITableViewController {
         setSegmentedControll()
 //        handleNoCityFound()
         
-        BlockScreen(title: "Paja").showBlocker {
-            print("Blocker shown")
-        }
+//        BlockScreen(title: "Paja").showBlocker {
+//            print("Blocker shown")
+//        }
         
-        DispatchQueue.global(qos: .background).async {
-            sleep(2)
-            DispatchQueue.main.async {
-                BlockScreen.hideBlocker()
-            }
-        }
+//        DispatchQueue.global(qos: .background).async {
+//            sleep(5)
+//            DispatchQueue.main.async {
+//                BlockScreen.hideBlocker()
+//            }
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
