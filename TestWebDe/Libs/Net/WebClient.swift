@@ -69,9 +69,7 @@ class WebClient {
                 guard let objectAsJSONLocal = object as? JSON  else { return }
                 completion(object, data, ServiceError(json: objectAsJSONLocal))
             } else {
-                
-
-                
+    
                 let error = (object as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
                 completion(nil, nil, error)
             }
@@ -90,8 +88,8 @@ extension URLRequest {
         self.init(url: url)
         httpMethod = method.rawValue
         
-        setValue("application/json", forHTTPHeaderField: "Accept")
-        setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        setValue("application/json", forHTTPHeaderField: "Accept")
+//        setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         if headers != nil {
             for (key, value) in headers! {
@@ -105,7 +103,6 @@ extension URLRequest {
             guard let params = params else { break }
             do {
                 let dataForBody = try JSONSerialization.data(withJSONObject: params, options: [])
-                //let payloadString = dataForBody.base64EncodedString(options: []); //aprint("payloadString for body: \(payloadString)")
                 httpBody = dataForBody
             } catch {
             }

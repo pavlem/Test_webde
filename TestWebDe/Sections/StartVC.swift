@@ -14,17 +14,37 @@ class StartVC: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var cityNameTxtFld: UITextField!
     // MARK: Constants
-    private let minCityCharLength = 3
+    private let minCityCharLength = 0 //3
     
     // MARK: - Actions
     @IBAction func fetchWeather(_ sender: UIButton) {
-        guard cityNameTxtFld.text!.count > minCityCharLength else {
-            AlertHelper.showAlert(txt: "City Name must have more than 3 characters") {}
-            return
-        }
+
+        let re = WeatherFiveDaysReq(cityName: "London")
+        _ = WeatherFiveDaysServer().getFiveDayData(weatherFiveDaysReq: re)
         
-        let wListTVC = UIStoryboard.weatherListTVC
-        wListTVC.cityName = cityNameTxtFld.text
-        navigationController?.pushViewController(wListTVC, animated: true)
+//        guard cityNameTxtFld.text!.count > minCityCharLength else {
+//            AlertHelper.showAlert(txt: "City Name must have more than 3 characters") {}
+//            return
+//        }
+//        
+//        let wListTVC = UIStoryboard.weatherListTVC
+//        wListTVC.cityName = cityNameTxtFld.text
+//        navigationController?.pushViewController(wListTVC, animated: true)
     }
+}
+
+
+func logResponsePaja(data: Data?, httpResponse: URLResponse?, error: Error?) {
+    print("⏪⏪⏪⏪⏪⏪⏪")
+    print("data: \n\(String(describing: data))\n")
+    print("response: \n\(String(describing: httpResponse))\n")
+    print("error: \n\(String(describing: error))\n")
+    
+    guard let data = data else {
+        print("⏪⏪⏪⏪⏪⏪⏪")
+        return
+    }
+    
+    print(data.prettyPrintedJSONString ?? "")
+    print("⏪⏪⏪⏪⏪⏪⏪")
 }

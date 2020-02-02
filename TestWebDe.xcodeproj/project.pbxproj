@@ -26,6 +26,9 @@
 		2BB5AD1623E6E1910091CFBE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1223E6E1900091CFBE /* Reachability.swift */; };
 		2BB5AD1723E6E1910091CFBE /* ReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1323E6E1900091CFBE /* ReachabilityHelper.swift */; };
 		2BB5AD1823E6E1910091CFBE /* ServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1423E6E1900091CFBE /* ServiceHelper.swift */; };
+		2BB5AD1D23E6E4A50091CFBE /* WeatherServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1C23E6E4A50091CFBE /* WeatherServer.swift */; };
+		2BB5AD1F23E6E5050091CFBE /* WeatherFiveDaysServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1E23E6E5050091CFBE /* WeatherFiveDaysServer.swift */; };
+		2BB5AD2123E6EFC20091CFBE /* WeatherFiveDaysReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD2023E6EFC20091CFBE /* WeatherFiveDaysReq.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		2BB5AD1223E6E1900091CFBE /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2BB5AD1323E6E1900091CFBE /* ReachabilityHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityHelper.swift; sourceTree = "<group>"; };
 		2BB5AD1423E6E1900091CFBE /* ServiceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHelper.swift; sourceTree = "<group>"; };
+		2BB5AD1C23E6E4A50091CFBE /* WeatherServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServer.swift; sourceTree = "<group>"; };
+		2BB5AD1E23E6E5050091CFBE /* WeatherFiveDaysServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFiveDaysServer.swift; sourceTree = "<group>"; };
+		2BB5AD2023E6EFC20091CFBE /* WeatherFiveDaysReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFiveDaysReq.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +213,8 @@
 		2BB5AD1923E6E1980091CFBE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2BB5AD1C23E6E4A50091CFBE /* WeatherServer.swift */,
+				2BB5AD1E23E6E5050091CFBE /* WeatherFiveDaysServer.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 		2BB5AD1B23E6E1A70091CFBE /* Request Objects */ = {
 			isa = PBXGroup;
 			children = (
+				2BB5AD2023E6EFC20091CFBE /* WeatherFiveDaysReq.swift */,
 			);
 			path = "Request Objects";
 			sourceTree = "<group>";
@@ -358,14 +367,17 @@
 			files = (
 				2BB5AD1023E6E1880091CFBE /* ServiceError.swift in Sources */,
 				2BB5AD1823E6E1910091CFBE /* ServiceHelper.swift in Sources */,
+				2BB5AD2123E6EFC20091CFBE /* WeatherFiveDaysReq.swift in Sources */,
 				2B98080B23E59FC40089E05C /* WeatherListCell.swift in Sources */,
 				2BB5AD1623E6E1910091CFBE /* Reachability.swift in Sources */,
 				2B98080D23E59FE30089E05C /* WeatherDetailVC.swift in Sources */,
 				2B98080F23E5A0190089E05C /* UIStoryboard+Extension.swift in Sources */,
 				2BA5444623E58F940094C1DB /* AppDelegate.swift in Sources */,
 				2B20B62C23E5A487009B65E1 /* AlertHelper.swift in Sources */,
+				2BB5AD1F23E6E5050091CFBE /* WeatherFiveDaysServer.swift in Sources */,
 				2BB5AD0E23E6E17A0091CFBE /* Encodable+Extension.swift in Sources */,
 				2BB5AD1723E6E1910091CFBE /* ReachabilityHelper.swift in Sources */,
+				2BB5AD1D23E6E4A50091CFBE /* WeatherServer.swift in Sources */,
 				2BB5AD1523E6E1910091CFBE /* WebClient.swift in Sources */,
 				2B98080723E597190089E05C /* StartVC.swift in Sources */,
 				2B98080923E59FB30089E05C /* WeatherListTVC.swift in Sources */,
