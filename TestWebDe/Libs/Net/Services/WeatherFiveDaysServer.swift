@@ -10,7 +10,7 @@ import Foundation
 
 class WeatherFiveDaysServer: WeatherServer {
     
-    func getFiveDayData(weatherFiveDaysReq: WeatherFiveDaysReq) -> URLSessionDataTask? {
+    func getFiveDayData(weatherFiveDaysReq: WeatherFiveDaysReq, completion: @escaping (WeatherFiveDaysResponse?, ServiceError?) -> Void) -> URLSessionDataTask? {
         
         return client.load(path: ServiceEndpoint.fiveDayForecast, method: .get, params: weatherFiveDaysReq.params, headers: nil) { (jsonObject, data, serviceErr) in
 
@@ -20,11 +20,11 @@ class WeatherFiveDaysServer: WeatherServer {
             }
 
             do {
-//                let paymentEnrolCheckUserResponse = try JSONDecoder().decode(PaymentEnrolCheckUserResponse.self, from: data!)
-//                completion(paymentEnrolCheckUserResponse, serviceErr)
+                let paymentEnrolCheckUserResponse = try JSONDecoder().decode(WeatherFiveDaysResponse.self, from: data!)
+                completion(paymentEnrolCheckUserResponse, serviceErr)
             } catch let jsonErr {
-//                print("Error serializing json:", jsonErr)
-//                completion(nil, serviceErr)
+                print("Error serializing json:", jsonErr)
+                completion(nil, serviceErr)
             }
         }
     }

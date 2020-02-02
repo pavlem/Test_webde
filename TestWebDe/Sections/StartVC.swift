@@ -19,8 +19,12 @@ class StartVC: UIViewController {
     // MARK: - Actions
     @IBAction func fetchWeather(_ sender: UIButton) {
 
-        let re = WeatherFiveDaysReq(cityName: "London")
-        _ = WeatherFiveDaysServer().getFiveDayData(weatherFiveDaysReq: re)
+        let weatherFiveDaysReq = WeatherFiveDaysReq(cityName: "London")
+        _ = WeatherFiveDaysServer().getFiveDayData(weatherFiveDaysReq: weatherFiveDaysReq, completion: { (weatherFiveDaysResponse, serErr) in
+            
+            
+            print("=====")
+        })
         
 //        guard cityNameTxtFld.text!.count > minCityCharLength else {
 //            AlertHelper.showAlert(txt: "City Name must have more than 3 characters") {}

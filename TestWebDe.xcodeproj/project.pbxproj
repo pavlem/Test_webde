@@ -29,6 +29,7 @@
 		2BB5AD1D23E6E4A50091CFBE /* WeatherServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1C23E6E4A50091CFBE /* WeatherServer.swift */; };
 		2BB5AD1F23E6E5050091CFBE /* WeatherFiveDaysServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD1E23E6E5050091CFBE /* WeatherFiveDaysServer.swift */; };
 		2BB5AD2123E6EFC20091CFBE /* WeatherFiveDaysReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD2023E6EFC20091CFBE /* WeatherFiveDaysReq.swift */; };
+		2BB5AD2323E6F01A0091CFBE /* WeatherFiveDaysResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5AD2223E6F01A0091CFBE /* WeatherFiveDaysResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		2BB5AD1C23E6E4A50091CFBE /* WeatherServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServer.swift; sourceTree = "<group>"; };
 		2BB5AD1E23E6E5050091CFBE /* WeatherFiveDaysServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFiveDaysServer.swift; sourceTree = "<group>"; };
 		2BB5AD2023E6EFC20091CFBE /* WeatherFiveDaysReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFiveDaysReq.swift; sourceTree = "<group>"; };
+		2BB5AD2223E6F01A0091CFBE /* WeatherFiveDaysResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFiveDaysResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 		2BB5AD1A23E6E1A10091CFBE /* Response Objects */ = {
 			isa = PBXGroup;
 			children = (
+				2BB5AD2223E6F01A0091CFBE /* WeatherFiveDaysResponse.swift */,
 			);
 			path = "Response Objects";
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				2B98080B23E59FC40089E05C /* WeatherListCell.swift in Sources */,
 				2BB5AD1623E6E1910091CFBE /* Reachability.swift in Sources */,
 				2B98080D23E59FE30089E05C /* WeatherDetailVC.swift in Sources */,
+				2BB5AD2323E6F01A0091CFBE /* WeatherFiveDaysResponse.swift in Sources */,
 				2B98080F23E5A0190089E05C /* UIStoryboard+Extension.swift in Sources */,
 				2BA5444623E58F940094C1DB /* AppDelegate.swift in Sources */,
 				2B20B62C23E5A487009B65E1 /* AlertHelper.swift in Sources */,
