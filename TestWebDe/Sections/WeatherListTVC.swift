@@ -15,26 +15,20 @@ class WeatherListTVC: UITableViewController {
     
     // MARK: - Properties
     private var dataTask: URLSessionDataTask?
-    
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setSegmentedControll()
+        setTableView()
 //        handleNoCityFound()
         
-//        BlockScreen(title: "Paja").showBlocker {
-//            print("Blocker shown")
-//        }
-        
-//        DispatchQueue.global(qos: .background).async {
-//            sleep(5)
-//            DispatchQueue.main.async {
-//                BlockScreen.hideBlocker()
-//            }
-//        }
+        if let cityName = cityName {
+            fetchCityWeather(cityName: cityName)
+        }
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -42,6 +36,17 @@ class WeatherListTVC: UITableViewController {
     }
     
     // MARK: - Helper
+    private func hideBlocker() {
+        DispatchQueue.main.async {
+            BlockScreen.hideBlocker()
+        }
+    }
+    
+    private func setTableView() {
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+               tableView.tableFooterView!.isHidden = true
+    }
+    
     private func setSegmentedControll() {
         let items = ["API", "Local JSON"]
         let segmentedController = UISegmentedControl(items: items)
@@ -54,6 +59,20 @@ class WeatherListTVC: UITableViewController {
         AlertHelper.showAlert(txt: "No city Found, please try again") {
             self.navigationController?.popViewController(animated: true)
         }
+    }
+    
+    private func fetchCityWeather(cityName: String) {
+        BlockScreen(title: "Fetching \(cityName) weather").showBlocker {}
+        
+        dataTask = WeatherFiveDaysServer().getFiveDayData(weatherFiveDaysReq: WeatherFiveDaysReq(cityName: cityName), completion: { [weak self] (weatherFiveDaysResponse, serErr) in
+            guard let `self` = self else { return }
+            sleep(1)
+            self.hideBlocker()
+            //            guard let weatherFiveDaysResponse = weatherFiveDaysResponse else { return }
+            //            for wData in weatherFiveDaysResponse.list {
+            //                print(wData.dt_txt)
+            //            }
+        })
     }
     
     // MARK: - Actions

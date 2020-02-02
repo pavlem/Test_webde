@@ -31,7 +31,8 @@ class BlockScreen: UIView {
     
     // MARK: - Properties
     private let animationDuration = 0.5
-
+    private var infoTxt: String?
+    
     private static var topVC: UIViewController? {
         if var topController = UIApplication.shared.delegate?.window??.rootViewController {
             while let presentedViewController = topController.presentedViewController {
@@ -45,7 +46,7 @@ class BlockScreen: UIView {
     // MARK: - Inits
     convenience init(title: String?) {
         self.init(frame: UIScreen.main.bounds)
-
+        self.infoTxt = title
         setupView()
     }
     
@@ -65,13 +66,23 @@ class BlockScreen: UIView {
     private func setupView() {
         backgroundColor = .black
         
-        setActivityIndicator()
+        setActivityIndicatorAndInfoLbl(lblTxt: self.infoTxt)
     }
     
-    private func setActivityIndicator() {
+    private func setActivityIndicatorAndInfoLbl(lblTxt: String?) {
         let activityView = UIActivityIndicatorView(style: .large)
         activityView.center = center
         addSubview(activityView)
         activityView.startAnimating()
+        
+        guard let infoTxt = lblTxt else { return }
+        let lbl = UILabel()
+        lbl.text = infoTxt
+        lbl.textColor = .white
+        lbl.font = UIFont.boldSystemFont(ofSize: 20)
+        lbl.sizeToFit()
+        lbl.center = activityView.center
+        lbl.frame.origin.y += 30
+        addSubview(lbl)
     }
 }
