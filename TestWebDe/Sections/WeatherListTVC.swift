@@ -16,20 +16,31 @@ class WeatherListTVC: UITableViewController {
     // MARK: - Properties
     private var dataTask: URLSessionDataTask?
     private var days = [WeatherPerDay]()
-
+    private var weatherFiveDaysResponseList = [WeatherFiveDaysResponseList]()
+    private var navTitle: String?
+    private var isFiveDayForecast: Bool {
+        return weatherFiveDaysResponseList.count == 0
+    }
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setSegmentedControll()
         setTableView()
-//        handleNoCityFound()
+
+        if isFiveDayForecast {
+            setSegmentedControll()
+        } else {
+            
+            navigationItem.title = "Day \(navTitle ?? "")"
+        }
+        //        handleNoCityFound()
         
         if let cityName = cityName {
             fetchCityWeather(cityName: cityName)
         }
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -45,7 +56,7 @@ class WeatherListTVC: UITableViewController {
     
     private func setTableView() {
         tableView.tableFooterView = UIView(frame: CGRect.zero)
-               tableView.tableFooterView!.isHidden = true
+        tableView.tableFooterView!.isHidden = true
     }
     
     private func setSegmentedControll() {
@@ -67,7 +78,7 @@ class WeatherListTVC: UITableViewController {
         
         dataTask = WeatherFiveDaysServer().getFiveDayData(weatherFiveDaysReq: WeatherFiveDaysReq(cityName: cityName), completion: { [weak self] (weatherFiveDaysResponse, serErr) in
             guard let `self` = self else { return }
-//            sleep(1)
+            //            sleep(1)
             self.days = WeatherPerDay.handle(wList: weatherFiveDaysResponse!.list)
             
             DispatchQueue.main.async {
@@ -93,18 +104,35 @@ class WeatherListTVC: UITableViewController {
 // MARK: - Table view data source
 extension WeatherListTVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.days.count
+        
+        if self.days.count > 0 {
+            return self.days.count
+        } else {
+            return weatherFiveDaysResponseList.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherListCell_ID", for: indexPath) as! WeatherListCell
-        cell.weatherListVM = WeatherListVM(weatherPerDay: days[indexPath.row])
+        
+        if days.count > 0 {
+            cell.weatherListVM = WeatherListVM(weatherPerDay: days[indexPath.row])
+        } else {
+            cell.weatherListVM = WeatherListVM(weatherPerDay: weatherFiveDaysResponseList[indexPath.row])
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let wDetailVC = UIStoryboard.weatherDetailVC
-        wDetailVC.weatherPerDay = days[indexPath.row]
-        self.navigationController?.pushViewController(wDetailVC, animated: true)
+        if days.count > 0 {
+            let wListTVC = UIStoryboard.weatherListTVC
+            wListTVC.weatherFiveDaysResponseList = days[indexPath.row].valuesPer3HourPeriod
+            wListTVC.navTitle = days[indexPath.row].day
+            self.navigationController?.pushViewController(wListTVC, animated: true)
+        } else {
+            let wDetailVC = UIStoryboard.weatherDetailVC
+            wDetailVC.weatherFiveDaysResponseList = weatherFiveDaysResponseList[indexPath.row]
+            self.navigationController?.pushViewController(wDetailVC, animated: true)
+        }
     }
 }

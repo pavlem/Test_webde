@@ -22,4 +22,11 @@ extension WeatherListVM {
         self.startingTime = "Starting time is: \(weatherPerDay.startingTime)"
         self.iconString = weatherPerDay.iconString
     }
+    
+    init(weatherPerDay: WeatherFiveDaysResponseList) {
+        self.averageTemp = "Average temp is: \(weatherPerDay.main.temp) K"
+        self.day = "Day is: \(weatherPerDay.dt_txt)"
+        self.startingTime = ""
+        self.iconString = weatherPerDay.weather.first!.icon
+    }
 }
