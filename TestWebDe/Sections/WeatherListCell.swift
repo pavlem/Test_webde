@@ -9,6 +9,24 @@
 import UIKit
 
 class WeatherListCell: UITableViewCell {
+    
+    @IBOutlet weak var dayLbl: UILabel!
+    @IBOutlet weak var avgTempLbl: UILabel!
+    @IBOutlet weak var startTimeLbl: UILabel!
+    @IBOutlet weak var weatherIconImgView: UIImageView!
+    
+    var weatherListVM: WeatherListVM? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    private func updateUI() {
+        dayLbl.text = weatherListVM?.day
+        avgTempLbl.text = weatherListVM?.averageTemp
+        startTimeLbl.text = weatherListVM?.startingTime
+        
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

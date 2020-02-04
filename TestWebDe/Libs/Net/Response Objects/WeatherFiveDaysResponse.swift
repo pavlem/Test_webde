@@ -21,6 +21,14 @@ struct WeatherFiveDaysResponseList: Decodable {
     let clouds: WeatherFiveDaysResponseClouds
     let wind: WeatherFiveDaysResponseWind
     let dt_txt: String
+    
+    var dt_txtShort: String {
+        return String(dt_txt.prefix(10))
+    }
+    
+    var startingTime: String {
+        return String(dt_txt.suffix(8))
+    }
 }
 
 struct WeatherFiveDaysResponseMain: Decodable {

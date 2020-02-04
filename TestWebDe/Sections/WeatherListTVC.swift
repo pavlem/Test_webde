@@ -15,6 +15,7 @@ class WeatherListTVC: UITableViewController {
     
     // MARK: - Properties
     private var dataTask: URLSessionDataTask?
+    private var days = [WeatherPerDay]()
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -66,12 +67,13 @@ class WeatherListTVC: UITableViewController {
         
         dataTask = WeatherFiveDaysServer().getFiveDayData(weatherFiveDaysReq: WeatherFiveDaysReq(cityName: cityName), completion: { [weak self] (weatherFiveDaysResponse, serErr) in
             guard let `self` = self else { return }
-            sleep(1)
+//            sleep(1)
+            self.days = WeatherPerDay.handle(wList: weatherFiveDaysResponse!.list)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
             self.hideBlocker()
-            //            guard let weatherFiveDaysResponse = weatherFiveDaysResponse else { return }
-            //            for wData in weatherFiveDaysResponse.list {
-            //                print(wData.dt_txt)
-            //            }
         })
     }
     
@@ -91,17 +93,18 @@ class WeatherListTVC: UITableViewController {
 // MARK: - Table view data source
 extension WeatherListTVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.days.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherListCell_ID", for: indexPath)
-        cell.textLabel?.text = cityName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherListCell_ID", for: indexPath) as! WeatherListCell
+        cell.weatherListVM = WeatherListVM(weatherPerDay: days[indexPath.row])
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let wDetailVC = UIStoryboard.weatherDetailVC
+        wDetailVC.weatherPerDay = days[indexPath.row]
         self.navigationController?.pushViewController(wDetailVC, animated: true)
     }
 }

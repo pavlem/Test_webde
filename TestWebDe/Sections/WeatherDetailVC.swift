@@ -9,9 +9,21 @@
 import UIKit
 
 class WeatherDetailVC: UIViewController {
+    
+    // MARK: - API
+    var weatherPerDay: WeatherPerDay?
+    
+    // MARK: - Properties
+    @IBOutlet weak var weatherInfo: UITextView!
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let myClass = weatherPerDay!
+        var myClassDumped = String()
+        dump(myClass, to: &myClassDumped)
+        self.weatherInfo.text = myClassDumped
     }
 }

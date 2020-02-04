@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2B20B62C23E5A487009B65E1 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B20B62B23E5A487009B65E1 /* AlertHelper.swift */; };
 		2B20B62E23E5ABEE009B65E1 /* BlockScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B20B62D23E5ABEE009B65E1 /* BlockScreen.swift */; };
+		2B5A0BDF23E9FE660072660A /* WeatherPerDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A0BDE23E9FE660072660A /* WeatherPerDay.swift */; };
+		2B5A0BE123E9FFB80072660A /* WeatherListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A0BE023E9FFB80072660A /* WeatherListVM.swift */; };
 		2B98080723E597190089E05C /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080623E597190089E05C /* StartVC.swift */; };
 		2B98080923E59FB30089E05C /* WeatherListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080823E59FB30089E05C /* WeatherListTVC.swift */; };
 		2B98080B23E59FC40089E05C /* WeatherListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B98080A23E59FC40089E05C /* WeatherListCell.swift */; };
@@ -52,6 +54,8 @@
 /* Begin PBXFileReference section */
 		2B20B62B23E5A487009B65E1 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		2B20B62D23E5ABEE009B65E1 /* BlockScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockScreen.swift; sourceTree = "<group>"; };
+		2B5A0BDE23E9FE660072660A /* WeatherPerDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPerDay.swift; sourceTree = "<group>"; };
+		2B5A0BE023E9FFB80072660A /* WeatherListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListVM.swift; sourceTree = "<group>"; };
 		2B98080623E597190089E05C /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		2B98080823E59FB30089E05C /* WeatherListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTVC.swift; sourceTree = "<group>"; };
 		2B98080A23E59FC40089E05C /* WeatherListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListCell.swift; sourceTree = "<group>"; };
@@ -106,6 +110,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5A0BDC23E9FE470072660A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B5A0BDE23E9FE660072660A /* WeatherPerDay.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B5A0BDD23E9FE510072660A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B5A0BE023E9FFB80072660A /* WeatherListVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		2B98080523E596FB0089E05C /* Sections */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +174,8 @@
 				2B98081023E5A01E0089E05C /* Libs */,
 				2BA5447523E5900B0094C1DB /* App */,
 				2B98080523E596FB0089E05C /* Sections */,
+				2B5A0BDD23E9FE510072660A /* ViewModels */,
+				2B5A0BDC23E9FE470072660A /* Models */,
 				2BA5447623E590180094C1DB /* Resources */,
 			);
 			path = TestWebDe;
@@ -376,10 +398,12 @@
 				2B98080D23E59FE30089E05C /* WeatherDetailVC.swift in Sources */,
 				2BB5AD2323E6F01A0091CFBE /* WeatherFiveDaysResponse.swift in Sources */,
 				2B98080F23E5A0190089E05C /* UIStoryboard+Extension.swift in Sources */,
+				2B5A0BDF23E9FE660072660A /* WeatherPerDay.swift in Sources */,
 				2BA5444623E58F940094C1DB /* AppDelegate.swift in Sources */,
 				2B20B62C23E5A487009B65E1 /* AlertHelper.swift in Sources */,
 				2BB5AD1F23E6E5050091CFBE /* WeatherFiveDaysServer.swift in Sources */,
 				2BB5AD0E23E6E17A0091CFBE /* Encodable+Extension.swift in Sources */,
+				2B5A0BE123E9FFB80072660A /* WeatherListVM.swift in Sources */,
 				2BB5AD1723E6E1910091CFBE /* ReachabilityHelper.swift in Sources */,
 				2BB5AD1D23E6E4A50091CFBE /* WeatherServer.swift in Sources */,
 				2BB5AD1523E6E1910091CFBE /* WebClient.swift in Sources */,
