@@ -18,6 +18,7 @@ class WeatherListTVC: UITableViewController {
     private var days = [WeatherPerDay]()
     private var weatherFiveDaysResponseList = [WeatherFiveDaysResponseList]()
     private var navTitle: String?
+    // MARK: Calculated
     private var isFiveDayForecast: Bool {
         return weatherFiveDaysResponseList.count == 0
     }
@@ -27,20 +28,10 @@ class WeatherListTVC: UITableViewController {
         super.viewDidLoad()
         
         setTableView()
-
-        if isFiveDayForecast {
-            setSegmentedControll()
-        } else {
-            
-            navigationItem.title = "Day \(navTitle ?? "")"
-        }
-        //        handleNoCityFound()
-        
-        if let cityName = cityName {
-            fetchCityWeather(cityName: cityName)
-        }
+        setNavigationBar(isFiveDayForecast: isFiveDayForecast)
+        fetchCityWeather(cityName: cityName)
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -48,6 +39,14 @@ class WeatherListTVC: UITableViewController {
     }
     
     // MARK: - Helper
+    private func setNavigationBar(isFiveDayForecast: Bool) {
+        if isFiveDayForecast {
+            setSegmentedControll()
+        } else {
+            navigationItem.title = "Day \(navTitle ?? "")"
+        }
+    }
+    
     private func hideBlocker() {
         DispatchQueue.main.async {
             BlockScreen.hideBlocker()
@@ -73,7 +72,9 @@ class WeatherListTVC: UITableViewController {
         }
     }
     
-    private func fetchCityWeather(cityName: String) {
+    private func fetchCityWeather(cityName: String?) {
+        guard let cityName = cityName else { return }
+        
         BlockScreen(title: "Fetching \(cityName) weather").showBlocker {}
         
         dataTask = WeatherFiveDaysService().getFiveDayData(weatherFiveDaysReq: WeatherFiveDaysReq(cityName: cityName), completion: { [weak self] (weatherFiveDaysResponse, serErr) in
@@ -88,15 +89,24 @@ class WeatherListTVC: UITableViewController {
         })
     }
     
+    private func fetchMOCCityWeather() {
+        if let path = Bundle.main.path(forResource: "weatherMOC", ofType: "json") {
+            let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            let weatherFiveDaysResponse = try! JSONDecoder().decode(WeatherFiveDaysResponse.self, from: data)
+            self.days = WeatherPerDay.handle(wList: weatherFiveDaysResponse.list)
+            tableView.reloadData()
+        }
+    }
+    
     // MARK: - Actions
     @objc func selectSource(_ segmentedControl: UISegmentedControl) {
-        switch (segmentedControl.selectedSegmentIndex) {
-        case 0:
-            print("API")
-        case 1:
-            print("JSON....")
+        switch WeatherSourceSwitch(rawValue: segmentedControl.selectedSegmentIndex) {
+        case .api:
+            fetchCityWeather(cityName: self.cityName)
+        case .localJSON:
+            fetchMOCCityWeather()
         default:
-            print("default....")
+            break
         }
     }
 }
@@ -104,7 +114,6 @@ class WeatherListTVC: UITableViewController {
 // MARK: - Table view data source
 extension WeatherListTVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if self.days.count > 0 {
             return self.days.count
         } else {

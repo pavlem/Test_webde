@@ -20,8 +20,8 @@ class WeatherFiveDaysService: WeatherServer {
             }
 
             do {
-                let paymentEnrolCheckUserResponse = try JSONDecoder().decode(WeatherFiveDaysResponse.self, from: data!)
-                completion(paymentEnrolCheckUserResponse, serviceErr)
+                let weatherFiveDaysResponse = try JSONDecoder().decode(WeatherFiveDaysResponse.self, from: data!)
+                completion(weatherFiveDaysResponse, serviceErr)
             } catch let jsonErr {
                 print("Error serializing json:", jsonErr)
                 completion(nil, serviceErr)
