@@ -89,22 +89,16 @@ class WeatherListTVC: UITableViewController {
         })
     }
     
-    private func fetchMOCCityWeather() {
-        if let path = Bundle.main.path(forResource: "weatherMOC", ofType: "json") {
-            let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-            let weatherFiveDaysResponse = try! JSONDecoder().decode(WeatherFiveDaysResponse.self, from: data)
-            self.days = WeatherPerDay.handle(wList: weatherFiveDaysResponse.list)
-            tableView.reloadData()
-        }
-    }
-    
     // MARK: - Actions
     @objc func selectSource(_ segmentedControl: UISegmentedControl) {
         switch WeatherSourceSwitch(rawValue: segmentedControl.selectedSegmentIndex) {
         case .api:
             fetchCityWeather(cityName: self.cityName)
         case .localJSON:
-            fetchMOCCityWeather()
+            WeatherFiveDaysService().getMocFiveDayData { (weatherFiveDaysResponse) in
+                self.days = WeatherPerDay.handle(wList: weatherFiveDaysResponse.list)
+                tableView.reloadData()
+            }
         default:
             break
         }
@@ -140,7 +134,7 @@ extension WeatherListTVC {
             self.navigationController?.pushViewController(wListTVC, animated: true)
         } else {
             let wDetailVC = UIStoryboard.weatherDetailVC
-            wDetailVC.weatherFiveDaysResponseList = weatherFiveDaysResponseList[indexPath.row]
+            wDetailVC.weatherPerHourFrame = weatherFiveDaysResponseList[indexPath.row]
             self.navigationController?.pushViewController(wDetailVC, animated: true)
         }
     }

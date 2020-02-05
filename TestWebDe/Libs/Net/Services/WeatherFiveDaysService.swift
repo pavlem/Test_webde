@@ -28,4 +28,11 @@ class WeatherFiveDaysService: WeatherServer {
             }
         }
     }
+    
+    func getMocFiveDayData(completion: (WeatherFiveDaysResponse) -> Void) {
+        let path = Bundle.main.path(forResource: "weatherMOC", ofType: "json")!
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+        let weatherFiveDaysResponse = try! JSONDecoder().decode(WeatherFiveDaysResponse.self, from: data)
+        completion(weatherFiveDaysResponse)
+    }
 }
