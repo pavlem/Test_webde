@@ -51,19 +51,21 @@ class WeatherListCell: UITableViewCell {
     }
     
     private func setIcon(iconCode: String) {
+        
+        if let iconImgFromCache = ImageHelper.imageCache.object(forKey: iconCode as AnyObject) {
+            self.weatherIconImgView.image = iconImgFromCache as? UIImage
+            return
+        }
+        
         self.dataTask = WeatherImageService().getWeatherIcon(iconCode: iconCode) { (image, serErr) in
             guard serErr == nil else { return }
             guard let img = image else { return }
             
+            ImageHelper.imageCache.setObject(img, forKey: iconCode as AnyObject)
+
             DispatchQueue.main.async() {
                 self.weatherIconImgView.image = img
             }
         }
     }
-
-    private func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
 }
-
-
