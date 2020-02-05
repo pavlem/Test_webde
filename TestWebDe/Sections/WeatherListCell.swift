@@ -17,13 +17,14 @@ class WeatherListCell: UITableViewCell {
         }
     }
     
-    // MARK: Properties
+    // MARK: - Properties
+    // MARK: Outlets
     @IBOutlet weak var dayLbl: UILabel!
     @IBOutlet weak var avgTempLbl: UILabel!
     @IBOutlet weak var startTimeLbl: UILabel!
     @IBOutlet weak var weatherIconImgView: UIImageView!
-    
-
+    // MARK: Vars
+    private var dataTask: URLSessionDataTask?
 
     // MARK: Lifecycle
     override func awakeFromNib() {
@@ -50,19 +51,12 @@ class WeatherListCell: UITableViewCell {
     }
     
     private func setIcon(iconCode: String) {
-        
-        guard let url = URL(string: "https://openweathermap.org/img/wn/\(iconCode)@2x.png") else { return }
-        getData(from: url) { (data, response, error) in
-            
-            guard
-            let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-            let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-            let data = data, error == nil,
-            let image = UIImage(data: data)
-            else { return }
+        self.dataTask = WeatherImageService().getWeatherIcon(iconCode: iconCode) { (image, serErr) in
+            guard serErr == nil else { return }
+            guard let img = image else { return }
             
             DispatchQueue.main.async() {
-                self.weatherIconImgView.image = image
+                self.weatherIconImgView.image = img
             }
         }
     }
@@ -72,24 +66,4 @@ class WeatherListCell: UITableViewCell {
     }
 }
 
-//extension UIImageView {
-//    private func downloaded(from url: URL, contentMode mode:  UIView.ContentMode = .scaleToFill) {
-//        contentMode = mode
-//        URLSession.shared.dataTask(with: url) { data, response, error in
-//            guard
-//                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-//                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-//                let data = data, error == nil,
-//                let image = UIImage(data: data)
-//                else { return }
-//            DispatchQueue.main.async() {
-//                self.image = image
-//            }
-//        }.resume()
-//    }
-//
-//    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-//        guard let url = URL(string: link) else { return }
-//        downloaded(from: url, contentMode: mode)
-//    }
-//}
+

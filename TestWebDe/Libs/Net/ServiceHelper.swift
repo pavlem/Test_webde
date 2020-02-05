@@ -10,12 +10,14 @@ import Foundation
 
 struct ServiceAPI {
     // MARK: - Properties
-    static let protocolFormat = "https://"
+    static let secureProtocolFormat = "https://"
     static let weatherAPI = "samples.openweathermap.org"
+    static let weatherImageAPI = "openweathermap.org"
 }
 
 struct ServiceEndpoint {
     static let fiveDayForecast = "/data/2.5/forecast"
+    static let icon = "/img/wn/"
 }
 
 protocol PropertyReflectable { }

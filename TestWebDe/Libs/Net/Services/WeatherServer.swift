@@ -9,5 +9,5 @@
 import Foundation
 
 class WeatherServer {
-    let client = WebClient(baseUrl: ServiceAPI.protocolFormat + ServiceAPI.weatherAPI)
+    let client = WebClient(baseUrl: ServiceAPI.secureProtocolFormat + ServiceAPI.weatherAPI)
 }

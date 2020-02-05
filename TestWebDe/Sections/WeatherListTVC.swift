@@ -76,7 +76,7 @@ class WeatherListTVC: UITableViewController {
     private func fetchCityWeather(cityName: String) {
         BlockScreen(title: "Fetching \(cityName) weather").showBlocker {}
         
-        dataTask = WeatherFiveDaysServer().getFiveDayData(weatherFiveDaysReq: WeatherFiveDaysReq(cityName: cityName), completion: { [weak self] (weatherFiveDaysResponse, serErr) in
+        dataTask = WeatherFiveDaysService().getFiveDayData(weatherFiveDaysReq: WeatherFiveDaysReq(cityName: cityName), completion: { [weak self] (weatherFiveDaysResponse, serErr) in
             guard let `self` = self else { return }
             //            sleep(1)
             self.days = WeatherPerDay.handle(wList: weatherFiveDaysResponse!.list)
