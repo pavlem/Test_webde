@@ -17,15 +17,15 @@ struct WeatherListVM {
 
 extension WeatherListVM {
     init(weatherPerDay: WeatherPerDay) {
-        self.averageTemp = "Average temp is: \(weatherPerDay.averageTemp) K"
-        self.day = "Day is: \(weatherPerDay.day)"
-        self.startingTime = "Starting time is: \(weatherPerDay.startingTime)"
+        self.averageTemp = "Average temp: \(weatherPerDay.averageTemp) K"
+        self.day = "Date: \(weatherPerDay.day)"
+        self.startingTime = "Starting time: \(String(weatherPerDay.startingTime.prefix(5)))"
         self.iconString = weatherPerDay.iconString
     }
     
     init(weatherPerDay: WeatherFiveDaysResponseList) {
-        self.averageTemp = "Average temp is: \(weatherPerDay.main.temp) K"
-        self.day = "Day is: \(weatherPerDay.dt_txt)"
+        self.averageTemp = "Average temp: \(weatherPerDay.main.temp) K"
+        self.day = "Date: \(String(weatherPerDay.dt_txt.prefix(16)))"
         self.startingTime = ""
         self.iconString = weatherPerDay.weather.first!.icon
     }

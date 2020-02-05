@@ -19,7 +19,6 @@ struct WeatherPerDay {
 extension WeatherPerDay {
     init(valuesPer3HourPeriod: [WeatherFiveDaysResponseList]) {
         let allTemperatures = valuesPer3HourPeriod.map({$0.main.temp})
-        
         self.averageTemp = String(Int(allTemperatures.reduce(0, +)) / allTemperatures.count)
         self.iconString = valuesPer3HourPeriod.first!.weather.map({$0.icon}).first!
         self.startingTime = valuesPer3HourPeriod.first!.startingTime
