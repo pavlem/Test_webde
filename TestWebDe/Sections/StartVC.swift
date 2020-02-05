@@ -14,16 +14,16 @@ class StartVC: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var cityNameTxtFld: UITextField!
     // MARK: Constants
-    private let minCityCharLength = 0 //3
+    private let minCityCharLength = 3
     
     // MARK: - Actions
     @IBAction func fetchWeather(_ sender: UIButton) {
         
-//        guard cityNameTxtFld.text!.count > minCityCharLength else {
-//            AlertHelper.showAlert(txt: "City Name must have more than 3 characters") {}
-//            return
-//        }
-//        
+        guard cityNameTxtFld.text!.count > minCityCharLength else {
+            AlertHelper.showAlert(txt: "City Name must have more than 3 characters") {}
+            return
+        }
+        
         let wListTVC = UIStoryboard.weatherListTVC
         wListTVC.cityName = cityNameTxtFld.text
         navigationController?.pushViewController(wListTVC, animated: true)

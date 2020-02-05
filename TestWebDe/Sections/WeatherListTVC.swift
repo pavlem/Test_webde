@@ -78,7 +78,7 @@ class WeatherListTVC: UITableViewController {
         
         dataTask = WeatherFiveDaysService().getFiveDayData(weatherFiveDaysReq: WeatherFiveDaysReq(cityName: cityName), completion: { [weak self] (weatherFiveDaysResponse, serErr) in
             guard let `self` = self else { return }
-            //            sleep(1)
+            sleep(1) // This is just to ilustrate the block screen look and feel while fetching weather data
             self.days = WeatherPerDay.handle(wList: weatherFiveDaysResponse!.list)
             
             DispatchQueue.main.async {
