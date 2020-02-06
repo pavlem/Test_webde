@@ -618,7 +618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sprintingsoftware.dsgapps.oneone;
+				PRODUCT_BUNDLE_IDENTIFIER = pavle.oneone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = WildcardSprintingSoftware_Dev;
 				SWIFT_VERSION = 5.0;
@@ -638,7 +638,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sprintingsoftware.dsgapps.oneone;
+				PRODUCT_BUNDLE_IDENTIFIER = pavle.oneone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = WildcardSprintingSoftware_Dev;
 				SWIFT_VERSION = 5.0;
