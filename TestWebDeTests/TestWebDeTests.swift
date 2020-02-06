@@ -30,8 +30,6 @@ class TestWebDeTests: XCTestCase {
             let weatherListVM1 = WeatherListVM(weatherPerDay: day1)
             let weatherListVM2 = WeatherListVM(weatherPerDay: day2)
             let weatherListVM3 = WeatherListVM(weatherPerDay: day3)
-
-            print("ssssss")
             
             XCTAssert(weatherListVM1.averageTemp == "Average temp: 283 K", "testWeatherVM not ok")
             XCTAssert(weatherListVM1.day == "Date: 2017-01-30", "testWeatherVM not ok")

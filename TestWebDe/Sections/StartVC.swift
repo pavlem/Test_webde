@@ -24,6 +24,11 @@ class StartVC: UIViewController {
             return
         }
         
+        guard ReachabilityHelper.shared.reachability.connection != .none else {
+            AlertHelper.showAlert(txt: "No Internet") {}
+            return
+        }
+        
         let wListTVC = UIStoryboard.weatherListTVC
         wListTVC.cityName = cityNameTxtFld.text
         navigationController?.pushViewController(wListTVC, animated: true)

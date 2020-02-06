@@ -11,7 +11,7 @@ import UIKit
 class WeatherDetailVC: UIViewController {
     
     // MARK: - API
-    var weatherPerHourFrame: WeatherFiveDaysResponseList?
+    var weatherPerThreeHour: WeatherFiveDaysResponseList?
     
     // MARK: - Properties
     @IBOutlet weak var weatherInfo: UITextView!
@@ -21,7 +21,7 @@ class WeatherDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myClass = weatherPerHourFrame!
+        let myClass = weatherPerThreeHour!
         var myClassDumped = String()
         dump(myClass, to: &myClassDumped)
         weatherInfo.text = myClassDumped

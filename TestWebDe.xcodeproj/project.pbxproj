@@ -120,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B43181823EC08AA004BA2A9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2B20B62D23E5ABEE009B65E1 /* BlockScreen.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		2B5A0BDC23E9FE470072660A /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +162,6 @@
 				2BB5AD0C23E6E1470091CFBE /* Net */,
 				2B98080E23E5A0190089E05C /* UIStoryboard+Extension.swift */,
 				2B20B62B23E5A487009B65E1 /* AlertHelper.swift */,
-				2B20B62D23E5ABEE009B65E1 /* BlockScreen.swift */,
 				2B5A0BE623EAB0600072660A /* ImageCache.swift */,
 			);
 			path = Libs;
@@ -183,6 +190,7 @@
 		2BA5444423E58F940094C1DB /* TestWebDe */ = {
 			isa = PBXGroup;
 			children = (
+				2B43181823EC08AA004BA2A9 /* Components */,
 				2B98081023E5A01E0089E05C /* Libs */,
 				2BA5447523E5900B0094C1DB /* App */,
 				2B98080523E596FB0089E05C /* Sections */,
@@ -602,14 +610,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = DT2VAVR98J;
 				INFOPLIST_FILE = TestWebDe/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.paja.patak.TestWebDe;
+				PRODUCT_BUNDLE_IDENTIFIER = sprintingsoftware.dsgapps.oneone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = WildcardSprintingSoftware_Dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -619,14 +630,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = DT2VAVR98J;
 				INFOPLIST_FILE = TestWebDe/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.paja.patak.TestWebDe;
+				PRODUCT_BUNDLE_IDENTIFIER = sprintingsoftware.dsgapps.oneone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = WildcardSprintingSoftware_Dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

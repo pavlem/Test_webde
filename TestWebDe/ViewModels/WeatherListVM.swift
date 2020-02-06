@@ -23,10 +23,10 @@ extension WeatherListVM {
         self.iconString = weatherPerDay.iconString
     }
     
-    init(weatherPerDay: WeatherFiveDaysResponseList) {
-        self.averageTemp = "Average temp: \(weatherPerDay.main.temp) K"
-        self.day = "Date: \(String(weatherPerDay.dt_txt.prefix(16)))"
+    init(weatherPerHour: WeatherFiveDaysResponseList) {
+        self.averageTemp = "Average temp: \(weatherPerHour.main.temp) K"
+        self.day = "Date: \(String(weatherPerHour.dt_txt.prefix(16)))"
         self.startingTime = ""
-        self.iconString = weatherPerDay.weather.first!.icon
+        self.iconString = weatherPerHour.weather.first!.icon
     }
 }

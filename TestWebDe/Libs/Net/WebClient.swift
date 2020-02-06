@@ -39,16 +39,9 @@ class WebClient {
                 
         let request = URLRequest(baseUrl: baseUrl, path: path, method: method, params: params, headers: headers, isUrlComponentsUsed: isUrlComponentsUsed)
         
-        // Sending request to the server.
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-        
-            
-            
             self.logResponse(data: data, httpResponse: response, error: error)
-
             
-        
-            // Parsing incoming data
             var object: Any?
             
             if let data = data {
@@ -58,20 +51,9 @@ class WebClient {
             if let httpResponse = response as? HTTPURLResponse, (200..<300) ~= httpResponse.statusCode {
                 completion(object, data, nil)
             } else if let httpResponse = response as? HTTPURLResponse, (400..<500) ~= httpResponse.statusCode {
-
-                if let objectAsJSON = object as? JSON {
-                    completion(object, data, ServiceError(json: objectAsJSON))
-                } else {
-                    completion(object, data, ServiceError.serverHostnameNotAvailable)
-                }
-
-            } else if let httpResponse = response as? HTTPURLResponse, (500..<600) ~= httpResponse.statusCode {
-                guard let objectAsJSONLocal = object as? JSON  else { return }
-                completion(object, data, ServiceError(json: objectAsJSONLocal))
+                completion(object, data, ServiceError.serverHostnameNotAvailable)
             } else {
-    
-                let error = (object as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
-                completion(nil, nil, error)
+                completion(nil, nil, ServiceError.other)
             }
         }
         
@@ -97,7 +79,6 @@ extension URLRequest {
             }
         }
         
-        // Set header JWS token
         switch method {
         case .post, .put, .patch:
             guard let params = params else { break }
@@ -139,8 +120,6 @@ extension URL {
         self = components.url!
     }
 }
-
-
 
 extension WebClient {
     

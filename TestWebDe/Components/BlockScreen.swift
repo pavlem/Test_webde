@@ -65,7 +65,6 @@ class BlockScreen: UIView {
     // MARK: - Helper
     private func setupView() {
         backgroundColor = .black
-        
         setActivityIndicatorAndInfoLbl(lblTxt: self.infoTxt)
     }
     
